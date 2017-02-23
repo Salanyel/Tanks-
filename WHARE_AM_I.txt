@@ -1,2 +1,2 @@
-htt'ps://unity3d.com/fr/learn/tutorials/projects/tanks-tutorial/tank-creation-control?playlist=20081
-at 58'35
+https://unity3d.com/fr/learn/tutorials/projects/tanks-tutorial/camera-control?playlist=20081
+at 00'00
