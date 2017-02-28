@@ -1,2 +1,2 @@
-https://unity3d.com/fr/learn/tutorials/projects/tanks-tutorial/shell-creation?playlist=20081
-at 16'54
+https://unity3d.com/fr/learn/tutorials/projects/tanks-tutorial/game-managers?playlist=20081
+at 00'00
