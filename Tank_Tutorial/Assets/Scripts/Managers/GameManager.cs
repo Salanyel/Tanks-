@@ -105,6 +105,21 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator RoundEnding()
     {
+        DisableTankControl();
+
+        m_RoundWinner = null;
+        m_RoundWinner = GetRoundWinner();
+
+        if (m_RoundWinner != null)
+        {
+            m_RoundWinner.m_Wins++;
+        }
+
+        m_GameWinner = GetGameWinner();
+
+        string message = EndMessage();
+        m_MessageText.text = message;
+
         yield return m_EndWait;
     }
 
@@ -122,7 +137,6 @@ public class GameManager : MonoBehaviour
         return numTanksLeft <= 1;
     }
 
-/*
     private TankManager GetRoundWinner()
     {
         for (int i = 0; i < m_Tanks.Length; i++)
@@ -166,7 +180,6 @@ public class GameManager : MonoBehaviour
 
         return message;
     }
-*/
 
     private void ResetAllTanks()
     {
