@@ -3,6 +3,7 @@ using System.Collections;
 //using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
 
 public class GameManager : MonoBehaviour
 {
@@ -60,6 +61,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator GameLoop()
     {
+        yield return StartCoroutine(WaitingForTwoPlayers());
         yield return StartCoroutine(RoundStarting());
         yield return StartCoroutine(RoundPlaying());
         yield return StartCoroutine(RoundEnding());
@@ -74,6 +76,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private IEnumerator WaitingForTwoPlayers()
+    {
+        Debug.Log("Beginning !");
+       
+        //TODO : Write the behavior while waiting for the two players
+        NetworkManager nm = FindObjectOfType<NetworkManager>();
+
+        while (nm.matchSize <= 2)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+    }
 
     private IEnumerator RoundStarting()
     {
