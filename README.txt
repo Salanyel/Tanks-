@@ -17,3 +17,5 @@ V: Hit and damage through the network
 VI: Set the end through the network
 
 VII: Add a "Revenge / Quit" screen
+
+VIII: Playing through Internet
