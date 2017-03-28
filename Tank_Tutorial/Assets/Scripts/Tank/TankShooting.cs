@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.Networking;
 
-public class TankShooting : MonoBehaviour
+public class TankShooting : NetworkBehaviour
 {
     public int m_PlayerNumber = 1;       
     public Rigidbody m_Shell;            
@@ -44,7 +44,7 @@ public class TankShooting : MonoBehaviour
         {
             //At max charge, not fired
             m_CurrentLaunchForce = m_MaxLaunchForce;
-            Fire();
+            CmdFire();
         }
         else if (Input.GetButtonDown(m_FireButton))
         {
@@ -61,12 +61,12 @@ public class TankShooting : MonoBehaviour
         }
         else if (Input.GetButtonUp(m_FireButton) && !m_Fired)
         {
-            Fire();
+            CmdFire();
         }
     }
 
-
-    private void Fire()
+    [Command]
+    private void CmdFire()
     {
         // Instantiate and launch the shell.
 
@@ -80,5 +80,7 @@ public class TankShooting : MonoBehaviour
         m_ShootingAudio.Play();
 
         m_CurrentLaunchForce = m_MinLaunchForce;
+
+        NetworkServer.Spawn(shellInstance.gameObject);
     }
 }
