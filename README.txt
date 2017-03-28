@@ -1,6 +1,6 @@
 Next step :
 
-https://unity3d.com/fr/learn/tutorials/topics/multiplayer-networking/networking-player-movement?playlist=29690
+https://unity3d.com/fr/learn/tutorials/topics/multiplayer-networking/player-health-single-player?playlist=29690
 
 II: Manage the spawn of the player's tank
 
